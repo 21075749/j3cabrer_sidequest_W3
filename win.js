@@ -14,11 +14,6 @@
 // drawWin() is called from main.js
 // only when currentScreen === "win"
 
-let catimg; // cute cat image
-function preload() {
-  catImg = loadImage("catimg.jpg"); // path to your image
-}
-
 function drawPinkGradient() {
   let c1 = color(255, 200, 235); // top (light pink)
   let c2 = color(255, 120, 200); // bottom (darker pink)
@@ -49,21 +44,26 @@ function drawWin() {
     height,
   );
 
-  imageMode(CENTER); // CAT IMAGEE
-  image(catImg, width / 2, height * 0.7, 200, 200); // x, y, width, height
+  imageMode(CENTER);
+  image(cat, width / 2, height * 0.7, 200, 200); // x, y, width, height
+
+  // Instruction text
+  textSize(20);
+  text("Click or press R to return to Start.", width / 2, 360);
 }
 
-// ------------------------------------------------------------
+// ------------------------------
 // Mouse input for win screen
-// ------------------------------------------------------------
+// ------------------------------
 // Any mouse click returns the player to the start screen
+// (no buttons needed for this simple end state)
 function winMousePressed() {
   currentScreen = "start";
 }
 
-// ------------------------------------------------------------
-// Keyboard input for win screen
-// ------------------------------------------------------------
+// ------------------------------
+// Keyboard input for lose screen
+// ------------------------------
 // R is commonly used for “restart” in games
 function winKeyPressed() {
   if (key === "r" || key === "R") {

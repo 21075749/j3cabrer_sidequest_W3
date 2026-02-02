@@ -27,6 +27,15 @@ let currentScreen = "start"; // "start" | "instr" | "game" | "win" | "lose"
 // setup() runs ONCE at the beginning
 // ------------------------------
 // This is where you usually set canvas size and initial settings.
+
+let cat; // happy cat image
+let sadcat; // sad cat image
+
+function preload() {
+  cat = loadImage("cat.jpg");
+  sadcat = loadImage("sadcat.jpg");
+}
+
 function setup() {
   createCanvas(800, 800);
 

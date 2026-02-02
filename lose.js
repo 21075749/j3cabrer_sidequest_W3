@@ -41,6 +41,9 @@ function drawLose() {
     height,
   );
 
+  imageMode(CENTER);
+  image(sadcat, width / 2, height * 0.7, 200, 200); // x, y, width, height
+
   // Instruction text
   textSize(20);
   text("Click or press R to return to Start.", width / 2, 360);
